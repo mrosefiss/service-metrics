@@ -2,6 +2,8 @@
 -- its id, its population, its geometry, as well as booleans that indicate whether it is 
 -- in the service area, near a base service stop, near a stop that receives frequent service, and
 -- whether it is "high density" (meaning contains more than 7000 people per square mile)
+
+-- It requires that data on Massachusetts census blocks be loaded into a table called "census."
 CREATE TABLE block_membership AS
 SELECT c.gid, c.poptotal, c.geom as block_geom, 
 	bb.buffer as base_buffer, fb.buffer as frequent_buffer, s.service_area, 
